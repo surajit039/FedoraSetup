@@ -16,8 +16,10 @@ gsettings set org.gnome.desktop.interface enable-hot-corners false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-overview'
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color true
-gsettings set org.gnome.shell.extensions.dash-to-dock background-color '#62554A'
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'DYNAMIC'
+gsettings set org.gnome.shell.extensions.dash-to-dock customize-alphas true
+gsettings set org.gnome.shell.extensions.dash-to-dock max-alpha 0.8
+gsettings set org.gnome.shell.extensions.dash-to-dock min-alpha 0.3
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
 gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
