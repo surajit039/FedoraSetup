@@ -9,9 +9,4 @@
 ![AllowExecution](https://user-images.githubusercontent.com/57254249/122517928-3ae39b00-d02e-11eb-9427-2fbe114dee85.png)
 ![RunAsProgram](https://user-images.githubusercontent.com/57254249/122517944-3e772200-d02e-11eb-9356-9132fc418978.png)
 
-**Change the JAVA version to the latest.**
-```bash
-sudo alternatives --config java
-```
-
 **Reboot your system.**
