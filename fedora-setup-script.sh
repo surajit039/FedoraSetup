@@ -4,7 +4,7 @@
 pkexec bash -c "
 systemctl disable systemd-journal-flush.service &&
 
-dnf remove -y adwaita-qt5 totem epiphany evolution lohit-assamese-fonts lohit-bengali-fonts lohit-devanagari-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-malayalam-fonts lohit-marathi-fonts lohit-nepali-fonts lohit-odia-fonts lohit-tamil-classical-fonts lohit-tamil-fonts lohit-telugu-fonts java-11-openjdk gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo &&
+dnf remove -y adwaita-qt5 totem epiphany evolution lohit-assamese-fonts lohit-bengali-fonts lohit-devanagari-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-malayalam-fonts lohit-marathi-fonts lohit-nepali-fonts lohit-odia-fonts lohit-tamil-classical-fonts lohit-tamil-fonts lohit-telugu-fonts java-11-openjdk java-11-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo &&
 
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm &&
 
@@ -32,7 +32,7 @@ flatpak install -y fedora org.stellarium.Stellarium &&
 
 flatpak install -y flathub org.zaproxy.ZAP &&
 
-sudo alternatives --set java java-latest-openjdk.x86_64"
+alternatives --set java java-latest-openjdk.x86_64"
 
 
 cd ~/.cache
