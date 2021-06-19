@@ -30,7 +30,9 @@ flatpak install -y flathub org.standardnotes.standardnotes &&
 
 flatpak install -y fedora org.stellarium.Stellarium &&
 
-flatpak install -y flathub org.zaproxy.ZAP"
+flatpak install -y flathub org.zaproxy.ZAP &&
+
+sudo alternatives --set java java-latest-openjdk.x86_64"
 
 
 cd ~/.cache
