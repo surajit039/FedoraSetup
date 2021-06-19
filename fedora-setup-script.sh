@@ -33,7 +33,9 @@ flatpak install -y fedora org.stellarium.Stellarium &&
 flatpak install -y flathub org.zaproxy.ZAP"
 
 
-
+cd ~/.cache
+mkdir wget
+cd wget
 wget https://noto-website-2.storage.googleapis.com/pkgs/Noto-unhinted.zip
 unzip Noto-unhinted.zip
 mkdir -p ~/.fonts
