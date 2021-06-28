@@ -4,7 +4,7 @@
 pkexec bash -c "
 systemctl disable systemd-journal-flush.service &&
 
-dnf remove -y adwaita-qt5 totem epiphany evolution lohit-assamese-fonts lohit-bengali-fonts lohit-devanagari-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-malayalam-fonts lohit-marathi-fonts lohit-nepali-fonts lohit-odia-fonts lohit-tamil-classical-fonts lohit-tamil-fonts lohit-telugu-fonts java-11-openjdk java-11-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo &&
+dnf remove -y adwaita-qt5 totem epiphany evolution lohit-assamese-fonts lohit-bengali-fonts lohit-devanagari-fonts lohit-gujarati-fonts lohit-gurmukhi-fonts lohit-kannada-fonts lohit-malayalam-fonts lohit-marathi-fonts lohit-nepali-fonts lohit-odia-fonts lohit-tamil-classical-fonts lohit-tamil-fonts lohit-telugu-fonts google-noto-cjk-fonts-common google-noto-emoji-color-fonts google-noto-sans-cjk-ttc-fonts google-noto-sans-gurmukhi-fonts google-noto-sans-sinhala-vf-fonts bitstream-vera* paktype* java-11-openjdk java-11-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo &&
 
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm &&
 
@@ -16,7 +16,7 @@ dnf config-manager --set-enabled rpmfusion-nonfree &&
 
 dnf config-manager --set-enabled rpmfusion-nonfree-updates &&
 
-dnf install -y vlc vlc-bittorrent vlc-extras file-roller kdenlive HandBrake-gui gnome-shell-extension-dash-to-dock gnome-shell-extension-appindicator gnome-shell-extension-gsconnect fondo WoeUSB gnome-multi-writer xkill geary rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data simplescreenrecorder transmission gnome-sound-recorder firefox mozilla-ublock-origin chromium-freeworld yaru-theme gnome-extensions-app gimp x264 x265 youtube-dl gparted python python2 python3 make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero audacity ibus-m17n hunspell-as hunspell-bn hunspell-en hunspell-gu hunspell-hi hunspell-kn hunspell-ml hunspell-mr hunspell-ne hunspell-or hunspell-pa hunspell-ta hunspell-te hyphen-sa seahorse wget git evince-nautilus brasero-nautilus easytag-nautilus gtkhash-nautilus seahorse-nautilus gvfs-mtp wireshark perl openssl openjfx-devel nodejs npm nautilus-extensions golang  tesseract tesseract-langpack-asm tesseract-langpack-chi_sim  tesseract-langpack-chi_tra  tesseract-langpack-eng tesseract-langpack-guj  tesseract-langpack-hin tesseract-langpack-kan tesseract-langpack-mal tesseract-langpack-mar tesseract-langpack-mya tesseract-langpack-nep tesseract-langpack-ori tesseract-langpack-pan tesseract-langpack-san tesseract-langpack-tam btrfs-progs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils reiserfs-utils udftools xfsprogs xfsdump inkscape &&
+dnf install -y vlc vlc-bittorrent vlc-extras file-roller kdenlive HandBrake-gui gnome-shell-extension-dash-to-dock gnome-shell-extension-appindicator gnome-shell-extension-gsconnect fondo google-noto-sans-devanagari-fonts google-noto-sans-bengali-fonts google-noto-sans-gujarati-fonts google-noto-sans-kannada-fonts google-noto-sans-malayalam-fonts google-noto-sans-oriya-fonts google-noto-sans-tamil-fonts google-noto-sans-telugu-fonts saab-fonts WoeUSB gnome-multi-writer xkill geary rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data simplescreenrecorder transmission gnome-sound-recorder firefox mozilla-ublock-origin chromium-freeworld yaru-theme gnome-extensions-app gimp x264 x265 youtube-dl gparted python python2 python3 make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero audacity ibus-m17n hunspell-as hunspell-bn hunspell-en hunspell-gu hunspell-hi hunspell-kn hunspell-ml hunspell-mr hunspell-ne hunspell-or hunspell-pa hunspell-ta hunspell-te hyphen-sa seahorse wget git evince-nautilus brasero-nautilus easytag-nautilus gtkhash-nautilus seahorse-nautilus gvfs-mtp wireshark perl openssl openjfx-devel nodejs npm nautilus-extensions golang  tesseract tesseract-langpack-asm tesseract-langpack-chi_sim  tesseract-langpack-chi_tra  tesseract-langpack-eng tesseract-langpack-guj  tesseract-langpack-hin tesseract-langpack-kan tesseract-langpack-mal tesseract-langpack-mar tesseract-langpack-mya tesseract-langpack-nep tesseract-langpack-ori tesseract-langpack-pan tesseract-langpack-san tesseract-langpack-tam btrfs-progs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils reiserfs-utils udftools xfsprogs xfsdump inkscape &&
 
 dnf update -y &&
 
@@ -35,13 +35,6 @@ flatpak install -y flathub org.zaproxy.ZAP &&
 alternatives --set java java-latest-openjdk.x86_64"
 
 
-cd ~/.cache
-mkdir wget
-cd wget
-wget https://noto-website-2.storage.googleapis.com/pkgs/Noto-unhinted.zip
-unzip Noto-unhinted.zip
-mkdir -p ~/.fonts
-cp -fr *ttf ~/.fonts/
 gsettings set org.gnome.desktop.interface gtk-theme Yaru-light
 gsettings set org.gnome.desktop.sound theme-name Yaru
 gsettings set org.gnome.desktop.interface icon-theme Yaru
