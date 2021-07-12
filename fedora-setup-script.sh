@@ -16,7 +16,7 @@ dnf config-manager --set-enabled rpmfusion-nonfree &&
 
 dnf config-manager --set-enabled rpmfusion-nonfree-updates &&
 
-dnf install -y vlc vlc-bittorrent vlc-extras file-roller kdenlive HandBrake-gui gnome-shell-extension-dash-to-dock gnome-shell-extension-appindicator gnome-shell-extension-gsconnect fondo google-noto-sans-devanagari-fonts google-noto-sans-bengali-fonts google-noto-sans-gujarati-fonts google-noto-sans-kannada-fonts google-noto-sans-malayalam-fonts google-noto-sans-oriya-fonts google-noto-sans-tamil-fonts google-noto-sans-telugu-fonts saab-fonts WoeUSB gnome-multi-writer xkill geary rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data simplescreenrecorder transmission gnome-sound-recorder firefox mozilla-ublock-origin chromium-freeworld yaru-theme gnome-extensions-app gimp x264 x265 youtube-dl gparted python python2 python3 make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero audacity ibus-m17n hunspell-as hunspell-bn hunspell-en hunspell-gu hunspell-hi hunspell-kn hunspell-ml hunspell-mr hunspell-ne hunspell-or hunspell-pa hunspell-ta hunspell-te hyphen-sa seahorse wget git evince-nautilus brasero-nautilus easytag-nautilus gtkhash-nautilus seahorse-nautilus gvfs-mtp wireshark perl openssl openjfx-devel nodejs npm nautilus-extensions golang  tesseract tesseract-langpack-asm tesseract-langpack-chi_sim  tesseract-langpack-chi_tra  tesseract-langpack-eng tesseract-langpack-guj  tesseract-langpack-hin tesseract-langpack-kan tesseract-langpack-mal tesseract-langpack-mar tesseract-langpack-mya tesseract-langpack-nep tesseract-langpack-ori tesseract-langpack-pan tesseract-langpack-san tesseract-langpack-tam btrfs-progs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils reiserfs-utils udftools xfsprogs xfsdump inkscape &&
+dnf install -y vlc vlc-bittorrent vlc-extras file-roller kdenlive HandBrake-gui gnome-shell-extension-dash-to-dock gnome-shell-extension-appindicator gnome-shell-extension-gsconnect fondo WoeUSB gnome-multi-writer xkill geary rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data simplescreenrecorder transmission gnome-sound-recorder firefox mozilla-ublock-origin chromium-freeworld yaru-theme gnome-extensions-app gimp x264 x265 youtube-dl gparted python python2 python3 make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero audacity ibus-m17n hunspell-as hunspell-bn hunspell-en hunspell-gu hunspell-hi hunspell-kn hunspell-ml hunspell-mr hunspell-ne hunspell-or hunspell-pa hunspell-ta hunspell-te hyphen-sa seahorse wget git evince-nautilus brasero-nautilus easytag-nautilus gtkhash-nautilus seahorse-nautilus gvfs-mtp wireshark perl openssl openjfx-devel nodejs npm nautilus-extensions golang  tesseract tesseract-langpack-asm tesseract-langpack-chi_sim  tesseract-langpack-chi_tra  tesseract-langpack-eng tesseract-langpack-guj  tesseract-langpack-hin tesseract-langpack-kan tesseract-langpack-mal tesseract-langpack-mar tesseract-langpack-mya tesseract-langpack-nep tesseract-langpack-ori tesseract-langpack-pan tesseract-langpack-san tesseract-langpack-tam btrfs-progs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils reiserfs-utils udftools xfsprogs xfsdump inkscape &&
 
 dnf update -y &&
 
@@ -28,13 +28,17 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 flatpak install -y flathub org.standardnotes.standardnotes &&
 
-flatpak install -y fedora org.stellarium.Stellarium &&
-
-flatpak install -y flathub org.zaproxy.ZAP &&
-
 alternatives --set java java-latest-openjdk.x86_64"
 
-
+cd ~/.cache
+mkdir wget
+cd wget
+wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansDevanagari-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifDevanagari-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansBengali-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifBengali-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansGujarati-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifGujarati-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansKannada-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifKannada-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansMalayalam-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifMalayalam-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansOriya-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansTamil-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifTamil-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansTelugu-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifTelugu-hinted.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansGurmukhi-hinted.zip
+unzip -o \*.zip
+mkdir -p ~/.fonts
+rsync -P --exclude=*UI-Regular* *Regular* ~/.fonts
+cd ~/
+rm -fr ~/.cache
 gsettings set org.gnome.desktop.interface gtk-theme Yaru-light
 gsettings set org.gnome.desktop.sound theme-name Yaru
 gsettings set org.gnome.desktop.interface icon-theme Yaru
