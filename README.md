@@ -1,4 +1,3 @@
-# fedora-desktop-setup
 ## CONFIGURING FEDORA WORKSTATION READY TO USE FOR THE END USER
 ![Screenshot](https://user-images.githubusercontent.com/57254249/122517560-ce689c00-d02d-11eb-9969-3efebd28d049.png)
 
