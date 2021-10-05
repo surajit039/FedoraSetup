@@ -27,7 +27,7 @@ dnf autoremove -y &&
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
 
-flatpak install -y flathub org.standardnotes.standardnotes org.telegram.desktop &&
+flatpak install -y flathub org.telegram.desktop &&
 
 alternatives --set java java-latest-openjdk.x86_64"
 
