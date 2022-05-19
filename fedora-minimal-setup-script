@@ -15,9 +15,7 @@ dnf config-manager --set-enabled rpmfusion-nonfree &&
 
 dnf config-manager --set-enabled rpmfusion-nonfree-updates &&
 
-dnf config-manager --set-enabled google-chrome &&
-
-dnf install -y google-chrome-stable vlc vlc-extras gnome-tweaks file-roller gnome-shell-extension-appindicator gnome-shell-extension-gsconnect fondo rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data transmission gnome-sound-recorder x264 x265 gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero seahorse wget git evince-nautilus brasero-nautilus gtkhash-nautilus nautilus-image-converter seahorse-nautilus gvfs-mtp wireshark openssl nodejs npm nautilus-extensions tesseract tesseract-langpack-asm tesseract-langpack-chi_sim  tesseract-langpack-chi_tra  tesseract-langpack-eng tesseract-langpack-guj  tesseract-langpack-hin tesseract-langpack-kan tesseract-langpack-mal tesseract-langpack-mar tesseract-langpack-mya tesseract-langpack-nep tesseract-langpack-ori tesseract-langpack-pan tesseract-langpack-san tesseract-langpack-tam btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
+dnf install -y vlc vlc-extras gnome-tweaks file-roller gnome-shell-extension-appindicator gnome-shell-extension-gsconnect fondo rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data transmission gnome-sound-recorder x264 x265 gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero seahorse wget git evince-nautilus brasero-nautilus gtkhash-nautilus nautilus-image-converter seahorse-nautilus gvfs-mtp wireshark openssl nodejs npm nautilus-extensions tesseract tesseract-langpack-asm tesseract-langpack-chi_sim  tesseract-langpack-chi_tra  tesseract-langpack-eng tesseract-langpack-guj  tesseract-langpack-hin tesseract-langpack-kan tesseract-langpack-mal tesseract-langpack-mar tesseract-langpack-mya tesseract-langpack-nep tesseract-langpack-ori tesseract-langpack-pan tesseract-langpack-san tesseract-langpack-tam btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
 
 dnf update -y &&
 
@@ -27,7 +25,7 @@ dnf autoremove -y &&
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
 
-flatpak install flathub com.mattjakeman.ExtensionManager &&
+flatpak install flathub com.mattjakeman.ExtensionManager com.google.Chrome &&
 
 alternatives --set java java-latest-openjdk.x86_64"
 
