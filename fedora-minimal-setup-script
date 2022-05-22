@@ -31,4 +31,4 @@ rsync -P --exclude=*UI-Regular* *Regular* ~/.fonts
 cd ~/
 rm -fr ~/.cache
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-
+gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io']"
