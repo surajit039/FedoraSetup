@@ -13,6 +13,8 @@ dnf autoremove -y &&
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
 
+flatpak remote-modify --enable flathub &&
+
 flatpak mask org.kde.KStyle.Adwaita &&
 
 flatpak install flathub com.mattjakeman.ExtensionManager com.google.Chrome org.videolan.VLC &&
