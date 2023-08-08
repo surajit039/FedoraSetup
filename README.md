@@ -1,6 +1,5 @@
 # CONFIGURING FEDORA WORKSTATION READY TO USE FOR THE END USER
 
-## Only indian languages are configured in [For-Indians.sh](https://github.com/surajit039/fedora-desktop-setup/blob/main/For-Indians.sh) other than nothing is different.
 ### 💥💥 My recommendation is don't enable third party repositories, instead use flatpak.
 
 ![Screenshot](https://user-images.githubusercontent.com/57254249/122517560-ce689c00-d02d-11eb-9969-3efebd28d049.png)
