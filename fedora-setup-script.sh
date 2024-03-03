@@ -19,25 +19,25 @@ flatpak mask org.kde.KStyle.Adwaita &&
 
 flatpak install flathub -y com.mattjakeman.ExtensionManager com.google.Chrome org.mozilla.firefox org.qbittorrent.qBittorrent org.videolan.VLC com.visualstudio.code org.onlyoffice.desktopeditors &&
 
-alternatives --set java java-latest-openjdk.x86_64
+alternatives --set java java-latest-openjdk.x86_64 &&
 
-dnf install -y https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+dnf install -y https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm &&
 
-mkdir -p /usr/local/share/fonts && cd /usr/local/share/fonts
+mkdir -p /usr/local/share/fonts && cd /usr/local/share/fonts &&
 
-git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
+git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git &&
 
-git clone https://github.com/supercomputra/SF-Mono-Font.git
+git clone https://github.com/supercomputra/SF-Mono-Font.git &&
 
-git clone https://github.com/yell0wsuit/New-York-fonts.git
+git clone https://github.com/yell0wsuit/New-York-fonts.git &&
 
-git clone https://github.com/aliifam/BlinkMacSystemFont.git
+git clone https://github.com/aliifam/BlinkMacSystemFont.git &&
 
-mkdir -p /usr/local/share/fonts/Helvetica && cd /usr/local/share/fonts/Helvetica
+mkdir -p /usr/local/share/fonts/Helvetica && cd /usr/local/share/fonts/Helvetica &&
 
-wget https://laplace.physics.ubc.ca/Doc/rnpletal/Helvetica.ttf.gz && gunzip Helvetica.ttf.gz
+wget https://laplace.physics.ubc.ca/Doc/rnpletal/Helvetica.ttf.gz && gunzip Helvetica.ttf.gz &&
 
-mkdir -p /usr/local/share/fonts/ComicMono && cd /usr/local/share/fonts/ComicMono
+mkdir -p /usr/local/share/fonts/ComicMono && cd /usr/local/share/fonts/ComicMono &&
 
 wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf"
 
