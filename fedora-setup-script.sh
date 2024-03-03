@@ -41,6 +41,7 @@ mkdir -p /usr/local/share/fonts/ComicMono && cd /usr/local/share/fonts/ComicMono
 
 wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf"
 
+fc-cache -v -f
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'blur-my-shell@aunetx', 'caffeine@patapon.info']"
 gsettings set org.gnome.desktop.interface document-font-name 'SF Pro Display 11'
