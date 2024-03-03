@@ -5,7 +5,7 @@ pkexec bash -c "
 
 dnf remove -y adwaita-qt6 adwaita-qt5 totem gnome-calendar epiphany evolution java-17-openjdk java-17-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo gnome-contacts gnome-weather gnome-maps gnome-photos mediawriter libreoffice-calc libreoffice-writer libreoffice-impress rhythmbox gnome-tour firefox &&
 
-dnf install -y gnome-tweaks file-roller p7zip-plugins p7zip gnome-shell-extension-appindicator gnome-shell-extension-gsconnect gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell gnome-shell-extension-pop-shell fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero seahorse wget git seahorse-nautilus gvfs-mtp wireshark openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
+dnf install -y gnome-tweaks file-roller p7zip-plugins p7zip gnome-shell-extension-appindicator gnome-shell-extension-gsconnect gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero seahorse wget git seahorse-nautilus gvfs-mtp wireshark openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
 
 dnf clean packages &&
 
