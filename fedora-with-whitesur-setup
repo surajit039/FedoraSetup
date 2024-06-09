@@ -61,3 +61,4 @@ gsettings set org.gnome.desktop.interface font-name 'BlinkMacSystemFont Medium 1
 gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'BlinkMacSystemFont Semibold 11'
 gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
+gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Light-blue'
