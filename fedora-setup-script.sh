@@ -39,7 +39,12 @@ wget https://laplace.physics.ubc.ca/Doc/rnpletal/Helvetica.ttf.gz && gunzip Helv
 
 mkdir -p /usr/local/share/fonts/ComicMono && cd /usr/local/share/fonts/ComicMono &&
 
-wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf"
+wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf &&
+
+echo "[org/gnome/shell]
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']" > /etc/dconf/db/local.d/00-extensions &&
+chmod 755 /etc/dconf/db/local.d/00-extensions &&
+dconf update"
 
 fc-cache -v -f
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
@@ -48,3 +53,4 @@ gsettings set org.gnome.desktop.interface document-font-name 'BlinkMacSystemFont
 gsettings set org.gnome.desktop.interface font-name 'BlinkMacSystemFont Medium 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'BlinkMacSystemFont Semibold 11'
+gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
