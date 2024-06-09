@@ -46,6 +46,11 @@ enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micx
 chmod 755 /etc/dconf/db/local.d/00-extensions &&
 dconf update &&
 
+cd /opt/ && git clone https://github.com/vinceliuice/WhiteSur-gtk-theme && cd WhiteSur-gtk-theme &&
+
+./install.sh -d /usr/local/share/themes -o normal -c Light -t blue -i fedora -l &&
+./tweaks.sh -F -o normal -c Light -t blue -l &&
+
 flatpak override --filesystem=xdg-config/gtk-4.0"
 
 fc-cache -v -f
