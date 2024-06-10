@@ -41,9 +41,12 @@ mkdir -p /usr/local/share/fonts/ComicMono && cd /usr/local/share/fonts/ComicMono
 
 wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf &&
 
-echo "[org/gnome/shell]
-enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']" > /etc/dconf/db/local.d/00-extensions &&
+echo '[org/gnome/shell]
+enabled-extensions=[\"appindicatorsupport@rgcjonas.gmail.com\", \"dash-to-dock@micxgx.gmail.com\", \"blur-my-shell@aunetx\", \"caffeine@patapon.info\", \"system-monitor@gnome-shell-extensions.gcampax.github.com\", \"user-theme@gnome-shell-extensions.gcampax.github.com\"]' > /etc/dconf/db/local.d/00-extensions &&
 chmod 755 /etc/dconf/db/local.d/00-extensions &&
+echo '[org/gnome/desktop/interface]
+cursor-theme=\"capitaine-cursors-light\"' > /etc/dconf/db/gdm.d/10-cursor-settings &&
+chmod 755 /etc/dconf/db/gdm.d/10-cursor-settings &&
 dconf update"
 
 fc-cache -v -f
