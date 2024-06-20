@@ -49,9 +49,13 @@ cursor-theme=\"capitaine-cursors-light\"' > /etc/dconf/db/gdm.d/10-cursor-settin
 chmod 755 /etc/dconf/db/gdm.d/10-cursor-settings &&
 dconf update"
 
+# Use the following commands only for user level settings //
+# only when the above root level commands already been executed once to the system.
+# But in case of first time usage do not touch any command, execute the whole.
+
 fc-cache -v -f
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
+# gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
 gsettings set org.gnome.desktop.interface document-font-name 'BlinkMacSystemFont 11'
 gsettings set org.gnome.desktop.interface font-name 'BlinkMacSystemFont Medium 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
