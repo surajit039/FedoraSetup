@@ -5,11 +5,15 @@ pkexec bash -c "
 
 dnf remove -y adwaita-qt6 adwaita-qt5 totem gnome-calendar epiphany evolution java-17-openjdk java-17-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo gnome-contacts gnome-weather gnome-maps gnome-photos mediawriter libreoffice-calc libreoffice-writer libreoffice-impress rhythmbox gnome-tour firefox &&
 
-dnf install -y gnome-tweaks file-roller fragments p7zip-plugins p7zip gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-system-monitor gnome-shell-extension-user-theme gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell la-capitaine-cursor-theme fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld ghex gnupg brasero seahorse wget git seahorse-nautilus gvfs-mtp wireshark openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
+dnf install -y gnome-tweaks timeshift file-roller fragments p7zip-plugins p7zip gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-system-monitor gnome-shell-extension-user-theme gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell la-capitaine-cursor-theme fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld gnupg seahorse wget git seahorse-nautilus gvfs-mtp openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
 
 dnf clean packages &&
 
 dnf autoremove -y &&
+
+dnf copr enable kylegospo/grub-btrfs &&
+
+dnf install grub-btrfs-timeshift &&
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
 
@@ -52,6 +56,20 @@ dconf update"
 # Use the following commands only for user level settings //
 # only when the above root level commands already been executed once to the system.
 # But in case of first time usage do not touch any command, execute the whole.
+
+array=( https://extensions.gnome.org/extension/5263/gtk4-desktop-icons-ng-ding/ )
+for i in "${array[@]}"
+do
+    EXTENSION_ID=$(curl -s $i | grep -oP 'data-uuid="\K[^"]+')
+    VERSION_TAG=$(curl -Lfs "https://extensions.gnome.org/extension-query/?search=$EXTENSION_ID" | jq '.extensions[0] | .shell_version_map | map(.pk) | max')
+    wget -O ${EXTENSION_ID}.zip "https://extensions.gnome.org/download-extension/${EXTENSION_ID}.shell-extension.zip?version_tag=$VERSION_TAG"
+    gnome-extensions install --force ${EXTENSION_ID}.zip
+    if ! gnome-extensions list | grep --quiet ${EXTENSION_ID}; then
+        busctl --user call org.gnome.Shell.Extensions /org/gnome/Shell/Extensions org.gnome.Shell.Extensions InstallRemoteExtension s ${EXTENSION_ID}
+    fi
+    gnome-extensions enable ${EXTENSION_ID}
+    rm ${EXTENSION_ID}.zip
+done
 
 fc-cache -v -f
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
