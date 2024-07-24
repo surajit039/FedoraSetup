@@ -7,9 +7,9 @@ dnf remove -y adwaita-qt6 adwaita-qt5 totem gnome-calendar epiphany evolution ja
 
 dnf install -y gnome-tweaks mozilla-noscript mozilla-ublock-origin mozilla-fira-sans-fonts mozilla-fira-fonts-common mozilla-fira-mono-fonts timeshift file-roller fragments p7zip-plugins glib2-devel p7zip gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-system-monitor gnome-shell-extension-user-theme gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell la-capitaine-cursor-theme fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld gnupg seahorse wget git seahorse-nautilus gvfs-mtp openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
 
-dnf copr enable kylegospo/grub-btrfs &&
+dnf copr enable -y kylegospo/grub-btrfs  &&
 
-dnf install grub-btrfs-timeshift &&
+dnf install -y grub-btrfs-timeshift &&
 
 dnf clean packages &&
 
