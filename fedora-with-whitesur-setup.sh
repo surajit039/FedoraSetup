@@ -3,9 +3,9 @@
 
 pkexec bash -c "
 
-dnf remove -y adwaita-qt6 adwaita-qt5 totem gnome-calendar epiphany evolution java-17-openjdk java-17-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo gnome-contacts gnome-weather gnome-maps gnome-photos mediawriter libreoffice-calc libreoffice-writer libreoffice-impress rhythmbox gnome-tour &&
+dnf remove -y adwaita-qt6 adwaita-qt5 totem firefox gnome-calendar epiphany evolution java-17-openjdk java-17-openjdk-devel gnome-shell-extension-window-list gnome-shell-extension-places-menu gnome-shell-extension-background-logo gnome-contacts gnome-weather gnome-maps gnome-photos mediawriter libreoffice-calc libreoffice-writer libreoffice-impress rhythmbox gnome-tour &&
 
-dnf install -y gnome-tweaks mozilla-noscript mozilla-ublock-origin mozilla-fira-sans-fonts mozilla-fira-fonts-common mozilla-fira-mono-fonts timeshift file-roller fragments p7zip-plugins glib2-devel p7zip gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-system-monitor gnome-shell-extension-user-theme gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell la-capitaine-cursor-theme fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld gnupg seahorse wget git seahorse-nautilus gvfs-mtp openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
+dnf install -y gnome-tweaks timeshift file-roller fragments p7zip-plugins glib2-devel p7zip gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-system-monitor gnome-shell-extension-user-theme gnome-shell-extension-caffeine gnome-shell-extension-blur-my-shell la-capitaine-cursor-theme fondo gnome-sound-recorder gparted python make cmake automake autoconf gcc g++ adb java-latest-openjdk-devel procyon-decompiler meld gnupg seahorse wget git seahorse-nautilus gvfs-mtp openssl nodejs npm nautilus-extensions btrfs-progs exfatprogs e2fsprogs f2fs-tools dosfstools mtools hfsutils jfsutils util-linux cryptsetup lvm2 nilfs-utils udftools xfsprogs xfsdump &&
 
 dnf copr enable -y kylegospo/grub-btrfs  &&
 
@@ -21,7 +21,7 @@ flatpak remote-modify --enable flathub &&
 
 flatpak mask org.kde.KStyle.Adwaita &&
 
-flatpak install flathub -y com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager org.videolan.VLC org.onlyoffice.desktopeditors &&
+flatpak install flathub -y org.mozilla.firefox com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager org.videolan.VLC org.onlyoffice.desktopeditors &&
 
 alternatives --set java java-latest-openjdk.x86_64 &&
 
@@ -59,7 +59,7 @@ flatpak override --filesystem=xdg-config/gtk-4.0"
 # only when the above root level commands already been executed once to the system.
 # But in case of first time usage do not touch any command, execute the whole.
 
-array=( https://extensions.gnome.org/extension/5263/gtk4-desktop-icons-ng-ding/ )
+array=( https://extensions.gnome.org/extension/5263/gtk4-desktop-icons-ng-ding/ https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/ )
 
 for i in "${array[@]}"
 do
@@ -78,9 +78,15 @@ mkdir -p ~/.local/etc && cd ~/.local/etc/ && git clone https://github.com/vincel
 fc-cache -v -f
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 # gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
-gsettings set org.gnome.desktop.interface document-font-name 'BlinkMacSystemFont 11'
-gsettings set org.gnome.desktop.interface font-name 'BlinkMacSystemFont Medium 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'BlinkMacSystemFont Semibold 11'
+gsettings set org.gnome.desktop.interface document-font-name 'BlinkMacSystemFont 16'
+gsettings set org.gnome.desktop.interface font-name 'BlinkMacSystemFont Medium 14'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 17'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'BlinkMacSystemFont Semibold 15'
 gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
 gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Light-blue'
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'focus-minimize-or-appspread'
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 48
+gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'do-nothing'
+gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DOTS'
+gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock blur false
