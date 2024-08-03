@@ -19,6 +19,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 flatpak remote-modify --enable flathub &&
 
+flatpak remote-modify --disable fedora &&
+
 flatpak mask org.kde.KStyle.Adwaita &&
 
 flatpak install flathub -y org.mozilla.firefox com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager org.videolan.VLC org.onlyoffice.desktopeditors &&
