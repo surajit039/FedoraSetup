@@ -1,14 +1,10 @@
-# CONFIGURING FEDORA WORKSTATION READY TO USE FOR THE END USER
+# 💥💥 CONFIGURING FEDORA WORKSTATION READY TO USE FOR THE END USER
 
-### 💥💥 My recommendation is don't enable third party repositories, instead use flatpak.
+### My recommendation is don't enable third party repositories, instead use flatpak.
+**Make the [script](https://github.com/surajit039/FedoraSetup/blob/main/FedoraGnomeSetup.sh) executable and run.**  
+**Reboot your system.**  
+**Bonus :) [Terminal and Text Editor Font](https://github.com/dtinth/comic-mono-font) And [Interface & Document Font](https://design.ubuntu.com/font)**
 
-![Screenshot](https://user-images.githubusercontent.com/57254249/122517560-ce689c00-d02d-11eb-9969-3efebd28d049.png)
+<img width="1920" height="1080" alt="Screenshot From 2026-07-30 17-56-10" src="https://github.com/user-attachments/assets/aaa60ac9-31c7-4727-a068-b2df08ae4960" />
+<img width="1920" height="1080" alt="Screenshot From 2026-07-30 17-57-38" src="https://github.com/user-attachments/assets/5a21ecec-fbb7-47c8-be15-6d7ae6de31f7" />
 
-**Make the script executable and run.**
-
-![Options](https://user-images.githubusercontent.com/57254249/122517444-a711cf00-d02d-11eb-9238-94df327a4c25.png)
-![Properties](https://user-images.githubusercontent.com/57254249/122517905-3323f680-d02e-11eb-944c-b02a9c52c2af.png)
-![AllowExecution](https://user-images.githubusercontent.com/57254249/122517928-3ae39b00-d02e-11eb-9427-2fbe114dee85.png)
-![RunAsProgram](https://user-images.githubusercontent.com/57254249/122517944-3e772200-d02e-11eb-9356-9132fc418978.png)
-
-**Reboot your system.**
